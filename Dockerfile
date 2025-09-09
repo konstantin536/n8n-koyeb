@@ -4,8 +4,6 @@ WORKDIR /home/node/.n8n
 
 USER node
 
-# Пробрасываем порт
 EXPOSE 5678
 
-# Запуск n8n
-CMD ["n8n"]
+CMD ["npx", "--yes", "n8n"]
