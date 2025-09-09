@@ -1,9 +1,9 @@
 FROM n8nio/n8n:latest
 
+# Рабочая директория для конфигов
 WORKDIR /home/node/.n8n
 
-USER node
+# Не меняем пользователя — по умолчанию в образе уже стоит node
+# Не прописываем CMD — в официальном образе оно уже задано как "n8n"
 
 EXPOSE 5678
-
-CMD ["/home/node/.n8n/node_modules/.bin/n8n"]
