@@ -1,9 +1,7 @@
-FROM n8nio/n8n:latest
+FROM docker.n8n.io/n8nio/n8n:latest
 
-# Рабочая директория для конфигов
-WORKDIR /home/node/.n8n
+# Рабочая директория
+WORKDIR /home/node
 
-# Не меняем пользователя — по умолчанию в образе уже стоит node
-# Не прописываем CMD — в официальном образе оно уже задано как "n8n"
-
-EXPOSE 5678
+# Запуск n8n в foreground (важно для Koyeb)
+CMD ["n8n", "start"]
